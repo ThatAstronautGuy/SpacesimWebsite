@@ -1,0 +1,65 @@
+/* HTML Element Modification */
+
+* {
+	font-family: 'Open Sans', sans-serif;
+	color: White;
+	text-decoration: none;
+}
+
+body {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #AAAAAA;
+	overflow-x: hidden;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+}
+
+
+/* Classes */
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* IDs */
+
+#header {
+	height: 40px;
+	width: 100%;
+	background-color: #000000;
+	display: block;
+	position: absolute;
+}
+
+#menu {
+	display: inline-block;
+  	background-color: #888888;
+  	left: -301px;
+  	top: 0;
+  	width: 300px;
+  	height: 100%;
+  	position: fixed;
+  	z-index: 80;
+}
+
+#openMenu {
+	position: absolute;
+	font-size: 24px;
+	padding-left: 10px;
+	padding-top: 5px;
+}
+
+#closeMenu {
+  	display: inline-block;
+}
