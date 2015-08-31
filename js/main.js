@@ -1,4 +1,7 @@
 $(document).ready(function() {
+	//Set up local variables
+	var collapsed = false;				//Handle collapsing menu
+
 	//Load elements into the page. Load is async,
 	//so we then attach the things being loaded as a callback
 	$('#header').load('/includes/header.html', function() {
@@ -22,4 +25,24 @@ $(document).ready(function() {
   		});
 	});
 	$('#footer').load('/includes/footer.html');
+
+	//Set up initial element visability states
+	$('#openMenu').hide();
+
+	$(window).scroll(function() {
+		if (collapsed === false && window.pageYOffset > 40) {
+			collapsed = true;
+			$('#openMenu').hide().fadeIn(200);
+			$('#header').animate({
+				width: '8%'
+			}, 500);
+		}
+		else if (collapsed === true && window.pageYOffset <= 40) {
+			collapsed = false;
+			$('#openMenu').show().fadeOut(200);
+			$('#header').animate({
+				width: '100%'
+			}, 500)
+		}
+	});
 });

@@ -39,7 +39,7 @@ html {
 	width: 100%;
 	background-color: #000000;
 	display: block;
-	position: absolute;
+	position: fixed;
 }
 
 #menu {
