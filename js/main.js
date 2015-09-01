@@ -4,7 +4,7 @@ $(document).ready(function() {
 	var menuOpen = false;				//Trac status of menu
 
 	//Force the page to start at top. This fixes menu problems
- 	$(this).scrollTop(0);
+ 	$(window).scrollTop(0);
 
 	//Load elements into the page. Load is async,
 	//so we then attach the things being loaded as a callback
@@ -73,21 +73,21 @@ $(document).ready(function() {
 	});
 
 	$('#arrow-prev').click(function() {
-    var currentSlide = $('.active-slide');
-    var prevSlide = currentSlide.prev();
+	    var currentSlide = $('.active-slide');
+	    var prevSlide = currentSlide.prev();
 
-    var currentDot = $('.active-dot');
-    var prevDot = currentDot.prev();
+	    var currentDot = $('.active-dot');
+	    var prevDot = currentDot.prev();
 
-    if(prevSlide.length === 0) {
-      prevSlide = $('.slide').last();
-      prevDot = $('.dot').last();
-    }
-    
-    currentSlide.fadeOut(600).removeClass('active-slide');
-    prevSlide.fadeIn(600).addClass('active-slide');
+	    if(prevSlide.length === 0) {
+	      prevSlide = $('.slide').last();
+	      prevDot = $('.dot').last();
+	    }
+	    
+	    currentSlide.fadeOut(600).removeClass('active-slide');
+	    prevSlide.fadeIn(600).addClass('active-slide');
 
-    currentDot.removeClass('active-dot');
-    prevDot.addClass('active-dot');
-  });
+	    currentDot.removeClass('active-dot');
+	    prevDot.addClass('active-dot');
+  	});
 });
