@@ -17,7 +17,6 @@ html {
 	height: 100%;
 }
 
-
 /* Classes */
 
 .noselect {
@@ -78,9 +77,9 @@ html {
 }
 
 .content .body {
-	width: 940px;
+	width: 960px;
 	margin: 0 auto;
-	padding: 0 10px;
+	padding: 24px 10px;
 }
 
 /* IDs */
@@ -89,9 +88,45 @@ html {
 	height: 120px;
 	width: 100%;
 	background-color: #000000;
-	background: #171a1a url(/img/bg-content.jpg) repeat-x left top;
+	background: url(/img/bg-header.png) repeat-x center top;
 	display: block;
 	position: static;
+	text-align: right;
+}
+
+#logo {
+	float: left;
+	display: inline-block;
+	margin-left: 10px;
+}
+
+#navigation {
+	display: inline-block;
+	height: 120px;
+	list-style: none;
+	padding: 20px 0px 0px 0px;
+	font-size: 20px;
+	*width: 516px; /** Needed for IE7 **/
+}
+
+#navigation li {
+	float: left;
+	margin: 0 30px;
+}
+
+#navigation li:first-child {
+	margin-left: 0;
+}
+
+#navigation li a {
+	color: #efefef;
+	line-height: 30px;
+	padding: 0;
+	text-decoration: none;
+}
+
+#navigation li a:hover, #navigation li.selected a {
+	color: #44b2f1;
 }
 
 #menu {
@@ -228,12 +263,11 @@ html {
 .slider img {
   width: 100%;
   max-height: 720px;
+  vertical-align: middle;
   z-index: 41;
 }
 
 .slide {
-  background: transparent url('/img/transparent.png') center center no-repeat;
-  background-size: cover;
   display: none;
   position: absolute;
   top: 0;
@@ -243,6 +277,9 @@ html {
   z-index: 40;
 }
 
+.slide * {
+	color: white;
+}
 .active-slide {
     display: block;
 }
