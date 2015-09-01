@@ -6,9 +6,21 @@ $(document).ready(function() {
 	//Force the page to start at top. This fixes menu problems
  	$(window).scrollTop(0);
 
+ 	var active = window.location.pathname;
+ 	var current_active_class = '#index';
+
 	//Load elements into the page. Load is async,
 	//so we then attach the things being loaded as a callback
-	$('#header').load('/includes/header.html');
+	$('#header').load('/includes/header.html', function() {
+  		$('#navigation a').each(function() {
+  			if (active === "/" + $(this).attr('href')) {
+					$(this).parent().addClass('active');
+  				$(current_active_class).parent().removeClass('active');
+  				current_active_class = ("#" + $(this).attr('href')).substring(0, ("#" + $(this).attr('href')).length - 5);
+  				console.log(current_active_class);
+  			}
+  		});
+	});
 	$('#menu-container').load('/includes/menu.html', function() {
 		$('#openMenu').click(function() {
 			menuOpen = true;

@@ -335,3 +335,8 @@ html {
 	height: 900px;
 	top: 120px;
 }
+
+.active a {
+	color: #000000;
+	font-style: italic;
+}
