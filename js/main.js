@@ -68,6 +68,8 @@ $(document).ready(function() {
 
 	var active = window.location.pathname;
 	var current_active_class = '#index';
+	
+	var header_height = $('#header').attr('height');
 
 	var interval = setInterval(nextSlide, 4000);
 
@@ -95,13 +97,13 @@ $(document).ready(function() {
 	$('#footer').load('/includes/footer.html');
 
 	$(window).scroll(function() {
-		if (collapsed === false && window.pageYOffset > 120) {
+		if (collapsed === false && window.pageYOffset > header_height) {
 			collapsed = true;
 			$('#openMenu').animate({
 				top: '0px'
 			}, 200);
 		}
-		else if (collapsed === true && window.pageYOffset <= 120) {
+		else if (collapsed === true && window.pageYOffset <= header_height) {
 			collapsed = false;
 			$('#openMenu').animate({
 				top: '-40px'
