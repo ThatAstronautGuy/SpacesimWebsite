@@ -12,8 +12,8 @@ $(document).ready(function() {
 	//Load elements into the page. Load is async,
 	//so we then attach the things being loaded as a callback
 	$('#header').load('/includes/header.html', function() {
-  		$('#navigation a').each(function() {
-  			if (active === "/" + $(this).attr('href')) {
+  		$('#navigation a').each(function() {							//This works, but I feel terrible
+  			if (active === "/" + $(this).attr('href') || (active === "/" && $(this).attr('href') === "index.html")) {
 					$(this).parent().addClass('active');
   				$(current_active_class).parent().removeClass('active');
   				current_active_class = ("#" + $(this).attr('href')).substring(0, ("#" + $(this).attr('href')).length - 5);
