@@ -64,6 +64,8 @@ $(document).ready(function() {
 		}
 	});
 
+	$('.active-slide').show();
+	
 	//Code to handle the carousel
 	$('#arrow-next').click(function() {
 	    var currentSlide = $('.active-slide');
