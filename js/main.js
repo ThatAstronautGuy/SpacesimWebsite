@@ -9,7 +9,7 @@ function nextSlide() {
 		nextSlide = $('.slide').first();
 		nextDot = $('.dot').first();
 	}
-		
+
 	currentSlide.fadeOut(600).removeClass('active-slide');
 	nextSlide.fadeIn(600).addClass('active-slide');
 
@@ -28,7 +28,7 @@ function prevSlide() {
 		prevSlide = $('.slide').last();
 		prevDot = $('.dot').last();
 	}
-		
+
 	currentSlide.fadeOut(600).removeClass('active-slide');
 	prevSlide.fadeIn(600).addClass('active-slide');
 
@@ -68,30 +68,28 @@ $(document).ready(function() {
 
 	var active = window.location.pathname;
 	var current_active_class = '#index';
-	
+
 	var header_height;
 
 	var interval = setInterval(nextSlide, 4000);
 
 	//Load elements into the page. Load is async,
 	//so we then attach the things being loaded as a callback
-	$('#header').load('/includes/header.html', function() {
-		header_height = $('#header').height();
-		$('#navigation a').each(function() {							//This works, but I feel terrible
-			if (active === "/" + $(this).attr('href') || (active === "/" && $(this).attr('href') === "index.html")) {
-					$(this).parent().addClass('active');
-				$(current_active_class).parent().removeClass('active');
-				current_active_class = ("#" + $(this).attr('href')).substring(0, ("#" + $(this).attr('href')).length - 5);
-				console.log(current_active_class);
+
+	header_height = $('#header').height();
+	$('#navigation a').each(function() {							//This works, but I feel terrible
+		if (active === "/" + $(this).attr('href') || (active === "/" && $(this).attr('href') === "index.html")) {
+				$(this).parent().addClass('active');
+			$(current_active_class).parent().removeClass('active');
+			current_active_class = ("#" + $(this).attr('href')).substring(0, ("#" + $(this).attr('href')).length - 5);
+			console.log(current_active_class);
 			}
-		});
 	});
 
 	$('#menu-container').load('/includes/menu.html', function() {
 		$('#openMenu').click(openMenu);
 		$('#closeMenu').click(closeMenu);
 	});
-	$('#footer').load('/includes/footer.html');
 
 	$(window).scroll(function() {
 		if (collapsed === false && window.pageYOffset > header_height) {
@@ -109,7 +107,7 @@ $(document).ready(function() {
 	});
 
 	$('.active-slide').show();
-	
+
 	//Code to handle the carousel
 	$('#arrow-next').click(function() {
 		nextSlide();

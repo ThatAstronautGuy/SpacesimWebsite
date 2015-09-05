@@ -12,7 +12,9 @@
 	</head>
 	<body>
 		<div id="menu-container"></div>
-		<div id="header"></div>
+		<header>
+			<?php include '/include/header.html'; ?>
+		</header>
 		<div class="carousel">
 			<div class="slider">
 			    <div class="slide active-slide">
@@ -93,7 +95,8 @@
 				<p>Test</p>
 			</div>
 		</div>
-		<div id="footer"></div>
+		<footer>
+			<?php include '/include/footer.html'; ?>
+		</footer>
 	</body>
 </html>
-
