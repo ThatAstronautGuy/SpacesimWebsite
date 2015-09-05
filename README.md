@@ -7,7 +7,7 @@ The official website for the Ottawa Carleton Educational Space Simuation. It is 
 The easiest way to contribute is by editing the files directly. You can then use the "Propose file change" button to suggest a commit. For larger changes, feel free to fork the repository as well as get in contact with us about your planned changes.
 
 ### Scripting Languages and Dependencies
-  - HTML
+  - HTML5
   - CSS
   - Javascript
   - Bootstrap

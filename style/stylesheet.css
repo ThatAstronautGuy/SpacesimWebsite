@@ -166,7 +166,7 @@ html {
 
 .slide-container {
 	width: 1280px;
-	margin: auto;  
+	margin: auto;
 	position: absolute;
 	left:0;
 	right: 0;
@@ -245,23 +245,22 @@ html {
   	display: inline-block;
 }
 
-#footer {
+footer {
 	background-color: #e8eff4;
 	border-top: 1px solid #fdfcfc;
 }
-
-#footer .body {
+footer .body {
 	background: #072438 url(/img/bg-footer.jpg) no-repeat center top;
 	padding: 36px 0;
 }
 
-#footer h4 {
+footer h4 {
 	color: #fff;
 	font: normal 14px Georgia, "Times New Roman", Times, serif;
 	margin: 0 0 12px;
 }
 
-#footer p {
+footer p {
 	color: #7890a1;
 	font-size: 12px;
 	line-height: 24px;
@@ -269,7 +268,7 @@ html {
 	padding: 0 0 6px;
 }
 
-#footer .footnote {
+footer .footnote {
 	float: right;
 	display: inline-block;
 	color: #03436f;
@@ -277,7 +276,7 @@ html {
 	margin-right: 10px;
 }
 
-#header {
+header {
 	height: 70px;
 	width: 100%;
 	background-color: #000000;
