@@ -19,7 +19,8 @@ The easiest way to contribute is by editing the files directly. You can then use
   - 'img' - contains all images used on the site
   - 'includes' - source files used across the site
   - 'js' - Javascript files
-  - 'style' - Stylesheets
+  - 'css' - Stylesheets
+  - 'php' - PHP Scripts
 
 ### Current State
 
