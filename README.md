@@ -30,3 +30,4 @@ The easiest way to contribute is by editing the files directly. You can then use
 
   - Fill in content from 'content' branch
   - Make more content
+  - Make it look better, it's missing something right now
