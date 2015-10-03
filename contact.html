@@ -1,5 +1,4 @@
-<!-- I removed clearfix from a couple places, commented at each point. If the CSS goes to hell, check if readding clearfix solves everything -->
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 	<head>
 		<title>OCE SpaceSim</title>
@@ -7,23 +6,55 @@
 		<meta name="description" content="OCESS is a non-profit organization dedicated to informing and involving students from across Ontario about space and science.">
 		<link href="/css/bootstrap.min.css" rel="stylesheet"/>
 		<link href="/css/stylesheet.css" rel="stylesheet"/>
+		<link href="/css/footer.css" rel="stylesheet"/>
+        <!-- Styles only for contact form -->
+        <link href="css/contactForm.css" rel="stylesheet"/>
 		<script src="/js/jquery.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
 		<script src="/js/main.js"></script>
 	</head>
 	<body>
 		<div id="menu-container"></div>
-		<div id="header"></div>		
-		<form name="send" action="php/send.php">
-			
-		</form>
-		<div class="content">
-			<div class="highlight">
-				<h2>Words - <i>Words</i></h2>	<!-- removed clearfix -->
+		<header class="header"></header>		
+		
+		<div class="container">
+			<div class="page-header">
+				<h1>Contact Us</h1>
 			</div>
-			<div class="body">
-				<p>Test</p>
-			</div>
+                <!-- I didn't write the PHP for this, so I hope I got the form right -->
+            <!-- Div to hold the form -->
+            <div class="well col-md-4 col-md-offset-4">
+            <form method="post" action="php/send.php">
+                <!-- Table for nice formatting -->
+                <table>
+                    <tr>
+                        <td><label for="first_name">First Name:</label></td>
+                <td><input type="text" id="first_name" name="first_name"><br></td>
+                    </tr>
+                    <tr>
+                        <td><label for="last_name">Last Name:</label></td>
+                        <td><input type="text" id="last_name" name="last_name"><br></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email:</label></td>
+                        <td><input type="text" id="email" name="email"><br></td>
+                    </tr>
+                    <tr>
+                        <td><label for="organization">Organization:</label></td>
+                        <td><input type="text" id="organization" name="organization"><br></td>
+                    </tr>
+                    <tr>
+                        <td><label for="comments">Comments:</label></td>
+                        <td><textarea id="comments" name="comments" rows="3"></textarea><br></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input class="btn btn-default" type="submit"></td>
+                    </tr>
+                </table>
+            </form>
+            </div>
 		</div>
-		<div id="footer"></div>
+		
+		<footer class="footer"></footer>
 	</body>
 </html>
