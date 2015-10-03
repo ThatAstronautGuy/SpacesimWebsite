@@ -26,7 +26,7 @@ The easiest way to contribute is by editing the files directly. You can then use
 
  The website is still undergoing it's main development. As such, a large portion of the content is lacking. New features and content will be added on a regular basis.
 
-### TOSO:
+### TODO:
 
   - Fill in content from 'content' branch
   - Make more content
