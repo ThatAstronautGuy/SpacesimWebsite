@@ -16,6 +16,8 @@
 		<script src="js/validate.min.js"></script>
 		<!-- Use bootbox.js -->
 		<script src="js/bootbox.min.js"></script>
+		<!-- Use the jQuery character counter -->
+		<script src="js/jquery.charactercounter.js"></script>
 	</head>
 	<body>
 		<div id="menu-container"></div>
@@ -81,39 +83,66 @@
 		</div>
 		
 		<footer class="footer"></footer>
-		
+
 		<!-- Validate the contact form using validate.js. This code must be at the bottom of the page to ensure the form is loaded first. -->
 		<script>
+            
+            
+            $(function(){
+                $("#comments").characterCounter({
+                    // Limit comments box to 1000 characters
+                    limit: 1000,
+                    // Use a <p> to wrap counter
+                    counterWrapper: "div",
+                    // Use ".help-block" CSS class for counter
+                    counterCssClass: "counterNormal",
+                    // The format that the counter will display. 1% is replaced with the remaining character count
+                    counterFormat: "%1 characters remaining",
+                    // CSS class when the counter limit is exceeded
+                    counterExceededCssClass: "counterExceeded"
+                });
+            });
+            
+            
             // Create the validate.js object that will validate the form
             var validator = new FormValidator('contactForm', [{
+                // Validate first name form field
                 name: 'first_name',
                 display: 'first name',
                 rules: 'required'
             }, {
+                // Validate last name form field
                 name: 'last_name',
                 display: 'last name',
                 rules: 'required'
             }, {
+                // Validate email form field
                 name: 'email',
                 rules: 'required|valid_email'
             }, {
+                // Validate organization form field
                 name: 'organization',
                 rules: 'required'
             }, {
+                // Validate comments form field
                 name: 'comments',
-                rules: 'required'
+                rules: 'required|max_length[1000]'
             }], function (errors, event) {
+                // Report errors to user
                 if (errors.length > 0) {
                     
                     // Convert errors into a string
                     var errorString = "";
                     
                     for (var i = 0, errorLength = errors.length; i < errorLength; i++) {
+                        
                         errorString += errors[i].message + '<br>';
+                        
                     }
                     
+                    // Make an alert using bootbox.js telling the user of the form validation errors
                     bootbox.alert(errorString, function() {
-                        // Callback
+                        // Callback not needed here
                     });
                 }
             });
