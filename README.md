@@ -19,6 +19,7 @@ The easiest way to contribute is by editing the files directly. You can then use
 ### Repository Structure
 
   - 'img' - contains all images used on the site
+    - 'carousel' - images used for the carousel on the main page
   - 'includes' - source files used across the site
   - 'js' - Javascript files
   - 'css' - Stylesheets
