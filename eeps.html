@@ -1,26 +1,30 @@
-<!-- I removed clearfix from a couple places, commented at each point. If the CSS goes to hell, check if readding clearfix solves everything -->
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 	<head>
 		<title>OCE SpaceSim</title>
-		<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+		<meta charset="UTF-8">
 		<meta name="description" content="OCESS is a non-profit organization dedicated to informing and involving students from across Ontario about space and science.">
-		<link href="/style/bootstrap.min.css" type="text/css" rel="stylesheet"/>
-		<link href="/style/stylesheet.css" type="text/css" rel="stylesheet"/>
+		<link href="/css/bootstrap.min.css" rel="stylesheet"/>
+		<link href="/css/stylesheet.css" rel="stylesheet"/>
+		<link href="/css/footer.css" rel="stylesheet"/>
 		<script src="/js/jquery.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
 		<script src="/js/main.js"></script>
 	</head>
 	<body>
 		<div id="menu-container"></div>
-		<div id="header"></div>		
-		<div class="content">
-			<div class="highlight">
-				<h2>EEPS - <i>All there is to know</i></h2>
+		<header class="header"></header>		
+		
+		<div class="container">
+			<div class="page-header">
+				<h1>EEPS - <i>All there is to know</h1>
 			</div>
-			<div class="body">
-				<p>One of the main components of Spacesim is education, both inside the club and outside the club. Our EEPs (external education program) are the part of the club where we go to schools, day camps, and any other group that would like us to come. We do activities ranging from planetariums and physics presentations to information about the solar system. </p>
-			</div>
+            <div class="col-xs-7 col-xs-offset-2">
+                    <p>One of the main components of Spacesim is education, both inside the club and outside the club. Our EEPs (external education program) are the part of the club where we go to schools, day camps, and any other group that would like us to come. We do activities ranging from planetariums and physics presentations to information about the solar system.</p>
+            </div>
+                
 		</div>
-		<div id="footer"></div>
+		
+		<footer class="footer"></footer>
 	</body>
 </html>

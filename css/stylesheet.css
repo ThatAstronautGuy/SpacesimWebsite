@@ -7,6 +7,10 @@ body {
 	overflow-x: hidden;
 }
 
+.page-header {
+    text-align: center;
+}
+
 .carousel {
 	margin-top: -20px;
 }
