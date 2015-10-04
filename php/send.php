@@ -64,6 +64,7 @@
   'X-Mailer: PHP/' . phpversion();
   @mail($email_to, $email_subject, $email_message, $headers);  
 ?>
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -75,7 +76,6 @@
 		<link href="../css/footer.css" rel="stylesheet"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script src="../js/bootstrap.min.js"></script>
-		<script src="../js/main.js"></script>
 	</head>
 	<body>
 		<div id="menu-container"></div>
@@ -86,8 +86,9 @@
 				<h1>Email Sent</h1>
 			</div>
             <!-- Content goes in this div -->
-            <div class="col-md-10 col-md-offset-1 well">
-                <p>Thank you for contacting us. We should get back to you within the next few shool days.</p> 
+            <div class="col-md-10 col-md-offset-1 well text-center">
+                <p>Thank you for contacting us. We should get back to you within the next few school days.</p>
+                <a href="../index.html" class="btn btn-primary">Back to Home</a>
             </div>
 		</div>
 		

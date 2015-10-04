@@ -7,14 +7,15 @@ The official website for the Ottawa Carleton Educational Space Simuation. It is 
 The easiest way to contribute is by editing the files directly. You can then use the "Propose file change" button to suggest a commit. For larger changes, feel free to fork the repository as well as get in contact with us about your planned changes.
 
 ### Scripting Languages and Dependencies
-  - HTML
-  - CSS
-  - Javascript
-  - Bootstrap
-  - JQuery
-  - PHP5
-  - validate.js
-  - bootbox.js
+  - [HTML](http://www.w3.org/html/)
+  - [CSS](http://www.w3.org/Style/CSS/Overview.en.html)
+  - [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+  - [Bootstrap](http://getbootstrap.com)
+  - [JQuery](https://jquery.com)
+  - [PHP5](https://php.net)
+  - [validate.js](https://rickharrison.github.io/validate.js/)
+  - [bootbox.js](http://bootboxjs.com)
+  - [jQuery Character Counter](https://github.com/dtisgodsson/jquery-character-counter)
 
 ### Repository Structure
 
