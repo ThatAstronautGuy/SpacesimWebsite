@@ -29,7 +29,7 @@
             <div class="well col-md-4 col-md-offset-4">
                 <!-- New form done in Bootstrap -->
                 <!-- The <label>s are styled with the .sr-only class. They are there so that screen readers can tell which form input is which. -->
-                <form method="post" action="php/send.php">
+                <form method="post" action="php/send.php" name="contactForm">
 
                     <!-- First name field -->
                     <label for="first_name" class="sr-only">First Name</label>
@@ -77,10 +77,46 @@
 
                 </form>
 
-
             </div>
 		</div>
 		
 		<footer class="footer"></footer>
+		
+		<!-- Validate the contact form using validate.js. This code must be at the bottom of the page to ensure the form is loaded first. -->
+		<script>
+            // Create the validate.js object that will validate the form
+            var validator = new FormValidator('contactForm', [{
+                name: 'first_name',
+                display: 'first name',
+                rules: 'required'
+            }, {
+                name: 'last_name',
+                display: 'last name',
+                rules: 'required'
+            }, {
+                name: 'email',
+                rules: 'required|valid_email'
+            }, {
+                name: 'organization',
+                rules: 'required'
+            }, {
+                name: 'comments',
+                rules: 'required'
+            }], function (errors, event) {
+                if (errors.length > 0) {
+                    
+                    // Convert errors into a string
+                    var errorString = "";
+                    
+                    for (var i = 0, errorLength = errors.length; i < errorLength; i++) {
+                        errorString += errors[i].message + '<br>';
+                    }
+                    
+                    bootbox.alert(errorString, function() {
+                        // Callback
+                    });
+                }
+            });
+        </script>
 	</body>
 </html>
