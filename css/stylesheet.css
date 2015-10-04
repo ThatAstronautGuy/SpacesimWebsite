@@ -40,3 +40,20 @@ body {
 	z-index: 100;
 	top: -40px;
 }
+
+/* Styling for comments box on contact form */
+#comments {
+    width: 100%;
+}
+
+/* Styling for character counter on contact form */
+/* Styling for normal character counter */
+.counterNormal {
+    color: limegreen;
+    text-align: right;
+}
+
+/* Styling for when the character count is exceeded */
+.counterExceeded {
+    color: red;
+}
