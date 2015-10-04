@@ -13,6 +13,8 @@ The easiest way to contribute is by editing the files directly. You can then use
   - Bootstrap
   - JQuery
   - PHP5
+  - validate.js
+  - bootbox.js
 
 ### Repository Structure
 
