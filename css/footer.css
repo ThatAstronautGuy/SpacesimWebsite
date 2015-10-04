@@ -15,7 +15,8 @@ html {
 	bottom: 0;
 	width: 100%;
 	min-height: 60px;
-	background-color: #f5f5f5;
+	background: #072438 url(/img/bg-footer.jpg) no-repeat center top;
+    background-size: contain;
 }
 
 .footer-link {
