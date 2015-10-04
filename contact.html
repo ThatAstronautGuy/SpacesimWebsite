@@ -1,29 +1,153 @@
-<!-- I removed clearfix from a couple places, commented at each point. If the CSS goes to hell, check if readding clearfix solves everything -->
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 	<head>
 		<title>OCE SpaceSim</title>
-		<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+		<meta charset="UTF-8">
 		<meta name="description" content="OCESS is a non-profit organization dedicated to informing and involving students from across Ontario about space and science.">
-		<link href="/style/bootstrap.min.css" type="text/css" rel="stylesheet"/>
-		<link href="/style/stylesheet.css" type="text/css" rel="stylesheet"/>
-		<script src="/js/jquery.min.js"></script>
-		<script src="/js/main.js"></script>
+		<link href="css/bootstrap.min.css" rel="stylesheet"/>
+		<link href="css/stylesheet.css" rel="stylesheet"/>
+		<link href="css/footer.css" rel="stylesheet"/>
+        <!-- Styles only for contact form -->
+        <link href="css/contactForm.css" rel="stylesheet"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/main.js"></script>
+		<!-- Use validate.js -->
+		<script src="js/validate.min.js"></script>
+		<!-- Use bootbox.js -->
+		<script src="js/bootbox.min.js"></script>
+		<!-- Use the jQuery character counter -->
+		<script src="js/jquery.charactercounter.js"></script>
 	</head>
 	<body>
 		<div id="menu-container"></div>
-		<div id="header"></div>		
-		<form name="send" action="send.php">
-			
-		</form>
-		<div class="content">
-			<div class="highlight">
-				<h2>Words - <i>Words</i></h2>	<!-- removed clearfix -->
+		<header class="header"></header>		
+		
+		<div class="container">
+			<div class="page-header">
+				<h1>Contact Us</h1>
 			</div>
-			<div class="body">
-				<p>Test</p>
-			</div>
+            <!-- Well to hold the form -->
+            <div class="well col-md-4 col-md-offset-4">
+                <!-- New form done in Bootstrap -->
+                <!-- The <label>s are styled with the .sr-only class. They are there so that screen readers can tell which form input is which. -->
+                <form method="post" action="php/send.php" name="contactForm">
+
+                    <!-- First name field -->
+                    <label for="first_name" class="sr-only">First Name</label>
+                    <div class="input-group">
+                       <span class="input-group-addon" id="basic-addon">First Name:</span>
+                       <input type="text" class="form-control" id="first_name" name="first_name">
+                    </div>
+                    <br>
+
+                    <!-- Last name field -->
+                    <label for="last_name" class="sr-only">Last Name</label>
+                    <div class="input-group">
+                       <span class="input-group-addon" id="basic-addon">Last Name:</span>
+                       <input type="text" class="form-control" id="last_name" name="last_name">
+                    </div>
+                    <br>
+
+                    <!-- Email field -->
+                    <label for="email" class="sr-only">Email</label>
+                    <div class="input-group">
+                       <span class="input-group-addon" id="basic-addon">Email:</span>
+                       <input type="text" class="form-control" id="email" name="email">
+                    </div>
+                    <br>
+                    <!-- Organization field -->
+                    <label for="organization" class="sr-only">Organization</label>
+                    <div class="input-group">
+                       <span class="input-group-addon" id="basic-addon">Organization:</span>
+                       <input type="text" class="form-control" id="organization" name="organization">
+                    </div>
+                    <br>
+
+                    <!-- Comments field -->
+                    <label for="comments" class="sr-only">Comments</label>
+                    <div class="input-group">
+                       <span class="input-group-addon" id="basic-addon">Comments:</span>
+                        <textarea class="form-control" id="comments" name="comments"></textarea>
+                    </div>
+                    <br>
+
+                    <!-- Submit button -->
+                    <div class="input-group text-center center-block">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+
+                </form>
+
+            </div>
 		</div>
-		<div id="footer"></div>
+		<br>
+		<br>
+		
+		<footer class="footer"></footer>
+
+		<!-- Validate the contact form using validate.js. This code must be at the bottom of the page to ensure the form is loaded first. -->
+		<script>
+            
+            
+            $(function(){
+                $("#comments").characterCounter({
+                    // Limit comments box to 1000 characters
+                    limit: 1000,
+                    // Use a <p> to wrap counter
+                    counterWrapper: "div",
+                    // Use ".help-block" CSS class for counter
+                    counterCssClass: "counterNormal",
+                    // The format that the counter will display. 1% is replaced with the remaining character count
+                    counterFormat: "%1 characters remaining",
+                    // CSS class when the counter limit is exceeded
+                    counterExceededCssClass: "counterExceeded"
+                });
+            });
+            
+            
+            // Create the validate.js object that will validate the form
+            var validator = new FormValidator('contactForm', [{
+                // Validate first name form field
+                name: 'first_name',
+                display: 'first name',
+                rules: 'required'
+            }, {
+                // Validate last name form field
+                name: 'last_name',
+                display: 'last name',
+                rules: 'required'
+            }, {
+                // Validate email form field
+                name: 'email',
+                rules: 'required|valid_email'
+            }, {
+                // Validate organization form field
+                name: 'organization',
+                rules: 'required'
+            }, {
+                // Validate comments form field
+                name: 'comments',
+                rules: 'required|max_length[1000]'
+            }], function (errors, event) {
+                // Report errors to user
+                if (errors.length > 0) {
+                    
+                    // Convert errors into a string
+                    var errorString = "";
+                    
+                    for (var i = 0, errorLength = errors.length; i < errorLength; i++) {
+                        
+                        errorString += errors[i].message + '<br>';
+                        
+                    }
+                    
+                    // Make an alert using bootbox.js telling the user of the form validation errors
+                    bootbox.alert(errorString, function() {
+                        // Callback not needed here
+                    });
+                }
+            });
+        </script>
 	</body>
 </html>
