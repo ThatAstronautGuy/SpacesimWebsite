@@ -24,7 +24,6 @@ The easiest way to contribute is by editing the files directly. You can then use
   - 'js' - Javascript files
   - 'css' - Stylesheets
   - 'php' - PHP Scripts
-  - 'eeps' - EEPS pages
 
 ### Current State
 
