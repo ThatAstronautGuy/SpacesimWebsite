@@ -35,7 +35,7 @@ $(document).ready(function() {
 
 	//Load elements into the page. Load is async,
 	//so we then attach the things being loaded as a callback
-	$('.header').load('/includes/header.html', function() {
+	$('.header').load('includes/header.html', function() {
 		header_height = $('.header').height();
 		$('#navbar a').each(function() {							
 			if (active === "/" + $(this).attr('href') 
@@ -47,11 +47,11 @@ $(document).ready(function() {
 		});
 	});
 
-	$('#menu-container').load('/includes/menu.html', function() {
+	$('#menu-container').load('includes/menu.html', function() {
 		$('#openMenu').click(openMenu);
 		$('#closeMenu').click(closeMenu);
 	});
-	$('.footer').load('/includes/footer.html', function() {
+	$('.footer').load('includes/footer.html', function() {
 		footer_height = $('.footer').height();
 		$('body').css('margin-bottom', footer_height);	
 	});
