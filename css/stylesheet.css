@@ -40,3 +40,7 @@ body {
 	z-index: 100;
 	top: -40px;
 }
+
+#comments {
+    width: 100%;
+}
