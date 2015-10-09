@@ -1,62 +1,84 @@
 <!-- I removed clearfix from a couple places, commented at each point. If the CSS goes to hell, check if readding clearfix solves everything -->
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>OCE SpaceSim</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="OCESS is a non-profit organization dedicated to informing and involving students from across Ontario about space and science.">
-		<link href="css/bootstrap.min.css" rel="stylesheet"/>
-		<link href="css/stylesheet.css" rel="stylesheet"/>
-		<link href="css/footer.css" rel="stylesheet"/>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/main.js"></script>
-	</head>
-	<body>
-		<div id="menu-container"></div>
-		<header class="header"></header>
-		
-		<div id="mainCarousel" class="carousel slide" data-ride="carousel"> 
-			<ol class="carousel-indicators">
-				<li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
-				<li data-target="#mainCarousel" data-slide-to="1"></li>
-			</ol>
-			
-			<div class="carousel-inner" role="listbox">
-				<div class="item active">
-					<img src="img/carousel/carousel1.png" alt="...">
-					<div class="carousel-caption">
-						<h1>The Milky Way</h1>
-						<p>As seen by the ESOs VISTA telescope</p>
-					</div>
-				</div>
-				<div class="item">
-					<img src="img/carousel/carousel2.png" alt="...">
-					<div class="carousel-caption">
-						<h1>Stars hatching in the head of the Orion constellation</h1>
-						<p>As seen by NASAs Spitzer Telescope</p>
-					</div>
-				</div>
-			</div>
-			<a class="left carousel-control" href="#mainCarousel" role="button" data-slide="prev">
-				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-			</a>
-			
-			<a class="right carousel-control" href="#mainCarousel" role="button" data-slide="next">
-				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</a>
-		</div>
+<head>
+    <title>OCE SpaceSim</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content=
+    "OCESS is a non-profit organization dedicated to informing and involving students from across Ontario about space and science." name=
+    "description">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/stylesheet.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
 
-		<div class="col-md-6 col-md-offset-3">
-			<div class="page-header">
-				<h1>OCESS</h1>
-			</div>
-			<h4 class="text-center">The OCESS is a non-profit organization that is dedicated to teaching people about space, as well as fostering a love and respect of the "final frontier." Explore our site to learn more about Spacesim. We hope you enjoy your visit!</h4>
-		</div>
-		<footer class="footer"></footer>
-	</body>
+<body>
+    <div id="menu-container">
+    </div>
+
+
+    <header class="header">
+    </header>
+
+
+    <div class="carousel slide" data-ride="carousel" id="mainCarousel">
+        <ol class="carousel-indicators">
+            <li class="active" data-slide-to="0" data-target="#mainCarousel">
+            </li>
+
+
+            <li data-slide-to="1" data-target="#mainCarousel">
+            </li>
+        </ol>
+
+
+        <div class="carousel-inner">
+            <div class="item active">
+                <img alt="..." src="img/carousel/carousel1.png">
+
+                <div class="carousel-caption">
+                    <h1>The Milky Way</h1>
+
+
+                    <p>As seen by the ESOs VISTA telescope</p>
+                </div>
+            </div>
+
+
+            <div class="item">
+                <img alt="..." src="img/carousel/carousel2.png">
+
+                <div class="carousel-caption">
+                    <h1>Stars hatching in the head of the Orion constellation</h1>
+
+
+                    <p>As seen by NASAs Spitzer Telescope</p>
+                </div>
+            </div>
+        </div>
+        <a class="left carousel-control" data-slide="prev" href="#mainCarousel"><span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span></a> <a class="right carousel-control" data-slide="next" href="#mainCarousel"><span class=
+        "glyphicon glyphicon-chevron-right"></span> <span class="sr-only">Next</span></a>
+    </div>
+
+
+    <div class="col-md-6 col-md-offset-3">
+        <div class="page-header">
+            <h1>OCESS</h1>
+        </div>
+
+
+        <h4 class="text-center">The OCESS is a non-profit organization that is dedicated to teaching people about space, as well as
+        fostering a love and respect of the "final frontier." Explore our site to learn more about Spacesim. We hope you enjoy your
+        visit!</h4>
+    </div>
+
+
+    <footer class="footer">
+    </footer>
+</body>
 </html>
-
