@@ -70,6 +70,7 @@
 	<head>
 		<title>OCE SpaceSim</title>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="OCESS is a non-profit organization dedicated to informing and involving students from across Ontario about space and science.">
 		<link href="../css/bootstrap.min.css" rel="stylesheet"/>
 		<link href="../css/stylesheet.css" rel="stylesheet"/>
