@@ -47,10 +47,6 @@ $(document).ready(function() {
 		});
 	});
 
-	$('#menu-container').load('includes/menu.html', function() {
-		$('#openMenu').click(openMenu);
-		$('#closeMenu').click(closeMenu);
-	});
 	$('.footer').load('includes/footer.html', function() {
 		footer_height = $('.footer').height();
 		$('body').css('margin-bottom', footer_height);	
