@@ -74,13 +74,33 @@
         zoom: 15,
         center: spaceSim
     });
-
+    
+    // Space Sim info window
+    var spaceSimInfoWindow = new google.maps.InfoWindow({
+        content: '<p style="color: black">440 Albert Street, where work sessions take place every Friday.</p>'
+    });
+    
+    // Lisgar info window
+    var lisgarInfoWindow = new google.maps.InfoWindow({
+        content: '<p style="color: black">Lisgar Collegiate Institute, where a large portion of Space Sim members come from.</p>'
+    });
+    
     // Create Space Sim location marker
     var spaceSimMarker = new google.maps.Marker({
         position: spaceSim,
         map: map,
         title: '440 Albert Street',
         label: 'S'
+    });
+    
+    // Spacesim event listener to open info window on click
+    spaceSimMarker.addListener('click', function() {
+        spaceSimInfoWindow.open(map, spaceSimMarker);
+    });
+    
+    // Lisgar event listener for info window
+    lisgarMarker.addListener('click', function() {
+        lisgarInfoWindow.open(map, lisgarMarker);
     });
     
     // Create Lisgar location marker
