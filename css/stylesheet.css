@@ -68,3 +68,7 @@ body {
 		border-width: 3px;
 		border-color: black;
 }
+
+#joinUsText {
+	padding: 25px 25px 25px 25px;
+}
