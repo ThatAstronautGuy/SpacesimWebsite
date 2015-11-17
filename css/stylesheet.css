@@ -69,6 +69,12 @@ body {
 		border-color: black;
 }
 
+/* Padding for text on join us page */
 #joinUsText {
 	padding: 25px 25px 25px 25px;
+}
+
+/* Blog post seperators */
+#blogContainer hr {
+	border-color: #0f405e;
 }

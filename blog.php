@@ -10,9 +10,12 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/stylesheet.css" rel="stylesheet">
     <link href="css/footer.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
+    </script>
+    <script src="js/bootstrap.min.js">
+    </script>
+    <script src="js/main.js">
+    </script>
 </head>
 
 <body>
@@ -31,29 +34,26 @@
         <!-- Content goes in this div -->
 
 
-        <div class="col-md-10 col-md-offset-1 well text-center">
-            <div id="blogContainer"></div>
-
+        <div class="col-md-10 col-md-offset-1 well">
+            <div id="blogContainer">
+            </div>
         </div>
     </div>
 
 
     <footer class="footer">
     </footer>
-    
     <script>
+        
         <?php
         
-        include 'php/Parsedown.php';
-        $Parsedown = new Parsedown();
-        
-        
         // Include Parsedown library
-        
+        include 'php/Parsedown.php';
         
         // Create Parsedown object
+        $Parsedown = new Parsedown();
         
-        
+        // Make a list of all files in blogPosts
                 $dir = "blogPosts/*";
                 $posts = [];
                 foreach(glob($dir) as $file) {
@@ -61,16 +61,22 @@
                         array_push($posts, basename($file));
                     }
                 }
+                
+         // Put each blog post into the page
                 foreach($posts as $val) {
                     $myfile = fopen("blogPosts/" . $val, "r") or die("Unable to open file!");
                     $postText = fread($myfile,filesize("blogPosts/" . $val));
-                    echo '$("#blogContainer").append("' .  $Parsedown->text("$postText") . '");
-        ';
+                    $postText = $Parsedown->text($postText);
+                    $postText = preg_replace("/\r\n|\r|\n/",'<br/>',$postText);
+                    echo "$('#blogContainer').append('" .  $postText . "');";
+                    echo "$('#blogContainer').append('<br><hr><br>');";
                     fclose($myfile);
                 }
                 
                 ?>
-        
+                
+        // Remove the last <hr> in the blog container
+        $("#blogContainer hr:last-of-type").remove();
     </script>
 </body>
 </html>
