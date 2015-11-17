@@ -1,5 +1,5 @@
 <?php
-  $email_to = "commanders@spacesim.org";
+  $email_to = "ocespacesim@gmail.com";
        
   $email_subject = "Automatic Email from Website";
        
