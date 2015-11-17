@@ -31,7 +31,7 @@
         <!-- Content goes in this div -->
 
 
-        <div class="col-md-10 col-md-offset-1 well text-center">
+        <div class="col-md-10 col-md-offset-1 well">
             <div id="blogContainer"></div>
 
         </div>
@@ -66,12 +66,14 @@
                     $postText = fread($myfile,filesize("blogPosts/" . $val));
                     $postText = $Parsedown->text($postText);
                     $postText = preg_replace("/\r\n|\r|\n/",'<br/>',$postText);
-                    echo "$('#blogContainer').append('" .  $postText . "')";
+                    echo "$('#blogContainer').append('" .  $postText . "');";
+                    echo "$('#blogContainer').append('<br><hr><br>');";
                     fclose($myfile);
                 }
                 
                 ?>
         
+        $("#blogContainer hr:last-of-type").remove();
     </script>
 </body>
 </html>
