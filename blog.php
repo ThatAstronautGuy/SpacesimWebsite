@@ -64,8 +64,8 @@
                 foreach($posts as $val) {
                     $myfile = fopen("blogPosts/" . $val, "r") or die("Unable to open file!");
                     $postText = fread($myfile,filesize("blogPosts/" . $val));
-                    echo '$("#blogContainer").append("' .  $Parsedown->text("$postText") . '");
-        ';
+                    $postText = preg_replace("/\r\n|\r|\n/",'<br/>',$postText);
+                    echo "$('#blogContainer').append('" .  $Parsedown->text("$postText") . "')";
                     fclose($myfile);
                 }
                 
