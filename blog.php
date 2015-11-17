@@ -32,12 +32,45 @@
 
 
         <div class="col-md-10 col-md-offset-1 well text-center">
-            <h3>Coming soon!</h3>
+            <div id="blogContainer"></div>
+
         </div>
     </div>
 
 
     <footer class="footer">
     </footer>
+    
+    <script>
+        <?php
+        
+        include 'php/Parsedown.php';
+        $Parsedown = new Parsedown();
+        
+        
+        // Include Parsedown library
+        
+        
+        // Create Parsedown object
+        
+        
+                $dir = "blogPosts/*";
+                $posts = [];
+                foreach(glob($dir) as $file) {
+                    if(!is_dir($file)) {
+                        array_push($posts, basename($file));
+                    }
+                }
+                foreach($posts as $val) {
+                    $myfile = fopen("blogPosts/" . $val, "r") or die("Unable to open file!");
+                    $postText = fread($myfile,filesize("blogPosts/" . $val));
+                    echo '$("#blogContainer").append("' .  $Parsedown->text("$postText") . '");
+        ';
+                    fclose($myfile);
+                }
+                
+                ?>
+        
+    </script>
 </body>
 </html>
